@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
                     "please enter your name",Toast.LENGTH_SHORT).show()
             }else{ // if the screenshot is not empty then we move to the activity
                 val intent = Intent(this, GeneralThreatsQuestions::class.java)
-                startActivity(intent)
+                startActivity(intent) //this starts an intent upon clicking  the start button, which takes us to the General Threats Questions.
                 finish()
             }
         }

@@ -1,9 +1,11 @@
 package com.mamo.cosbia
 
+
+// this is our Questions data file. It contains the general internet threats questions.
 object Constants{
-    fun getQuestions(): ArrayList<GenThreaQues>{
-        val questionsList = ArrayList<GenThreaQues>()
-        val ques1 = GenThreaQues(
+    fun getQuestions(): ArrayList<Question>{
+        val questionsList = ArrayList<Question>()
+        val ques1 = Question(
             1,
             "One of your classmate has sent around an embarrassing photo of another classmate." +
                 " What should you do with it?",
@@ -17,7 +19,7 @@ object Constants{
         )
         questionsList.add(ques1)
 
-        val ques2 = GenThreaQues(
+        val ques2 = Question(
             2,
             "One of your friends posted a video about you on the Internet and you do not like it." +
                     " You asked them to take it off but they said no, because it is funny." +
@@ -32,7 +34,7 @@ object Constants{
         )
         questionsList.add(ques2)
 
-        val ques3 = GenThreaQues(
+        val ques3 = Question(
             3,
             "Your friend tells you she is talking to a boy/girl online and on the weekend," +
                     " she/he will meet him/her. What should you do?",
@@ -46,7 +48,7 @@ object Constants{
         )
         questionsList.add(ques3)
 
-        val ques4 = GenThreaQues(
+        val ques4 = Question(
             4,
             "A classmate tells you someone on an online game was calling him/her mean names. What should you do?",
             "A. Tell your teacher or another adult",
@@ -59,7 +61,7 @@ object Constants{
         )
         questionsList.add(ques4)
 
-        val ques5 = GenThreaQues(
+        val ques5 = Question(
             5,
             "Whom are you allowed to share your passwords with?",
             "A. Your friends",
@@ -71,7 +73,7 @@ object Constants{
         )
         questionsList.add(ques5)
 
-        val ques6 = GenThreaQues(
+        val ques6 = Question(
             6,
             "You need to create a Website password. What should you use?",
             "A. Your full name (e.g. annamarie)",
@@ -84,7 +86,7 @@ object Constants{
         )
         questionsList.add(ques6)
 
-        val ques7 = GenThreaQues(
+        val ques7 = Question(
             7,
             "The Internet gives us access to many resources we would otherwise not be able to get in contact with.",
             "A. TRUE",
@@ -98,7 +100,7 @@ object Constants{
         )
         questionsList.add(ques7)
 
-        val ques8 = GenThreaQues(
+        val ques8 = Question(
             8,
             "The Internet gives us access to many resources we would otherwise not be able to get in contact with.",
             "A. TRUE",
