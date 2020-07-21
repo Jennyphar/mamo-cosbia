@@ -3,6 +3,10 @@ package com.mamo.cosbia
 
 // this is our Questions data file. It contains the general internet threats questions.
 object Constants{
+    const val USER_NAME: String  = "user_name"
+    const val TOTAL_QUESTIONS: String = "total_questions"
+    const val  CORRECT_ANSWERS: String = "correct_answers"
+
     fun getQuestions(): ArrayList<Question>{
         val questionsList = ArrayList<Question>()
         val ques1 = Question(

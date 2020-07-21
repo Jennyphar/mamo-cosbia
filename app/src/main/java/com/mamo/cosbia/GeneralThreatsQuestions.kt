@@ -1,5 +1,6 @@
 package com.mamo.cosbia
 
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
@@ -19,10 +20,14 @@ class GeneralThreatsQuestions : AppCompatActivity(), View.OnClickListener {
     private var mCurrentPosition: Int = 1
     private var mQuestionsList: ArrayList<Question>? = null
     private var mSelectedOptionPosition: Int = 0
+    private var mCorrectAnswer: Int = 0
+    private var mUserName: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_general_threats_questions)
+
+        mUserName = intent.getStringExtra(Constants.USER_NAME)
 
         mQuestionsList= Constants.getQuestions() // this gets a list of questions from the file Constants which is a data file
         setQuestion()
@@ -36,7 +41,7 @@ class GeneralThreatsQuestions : AppCompatActivity(), View.OnClickListener {
     }
     // setting the questions function
     private fun setQuestion(){
-        mCurrentPosition = 1
+
         val question = mQuestionsList!![mCurrentPosition -1]
 
         defaultOptionsView() // to make sure that all the buttons are at default stage before clicking on them
@@ -95,26 +100,34 @@ class GeneralThreatsQuestions : AppCompatActivity(), View.OnClickListener {
                     when{
                         mCurrentPosition <= mQuestionsList!!.size ->{
                             setQuestion()
-                        }else->{
-                        Toast.makeText(this, "you have successfulluy completed the quiz",
-                            Toast.LENGTH_SHORT).show()
-                    }
+                        }
+                        else->{
+                            val intent = Intent (this, ResultActivity::class.java)
+                            intent.putExtra(Constants.USER_NAME, mUserName)
+                            intent.putExtra(Constants.CORRECT_ANSWERS, mCorrectAnswer)
+                            intent.putExtra(Constants.TOTAL_QUESTIONS, mQuestionsList!!.size)
+                            startActivity(intent)
+                                finish()
+                        }
                     }
                 }else{
-                    val question = mQuestionsList?.get(mCurrentPosition-1)
-                    if(question!!.correctOption != mSelectedOptionPosition){
-                        answerView(mSelectedOptionPosition, R.drawable.wrong_option_border_bg)
-                        Toast.makeText(this, question.inCorrectAns, Toast.LENGTH_LONG).show()// show
+                        val question = mQuestionsList?.get(mCurrentPosition-1)
+                        if(question!!.correctOption != mSelectedOptionPosition){
+                            answerView(mSelectedOptionPosition, R.drawable.wrong_option_border_bg)
+                            Toast.makeText(this, question.inCorrectAns, Toast.LENGTH_LONG).show()// show
+                        }else{
+                            mCorrectAnswer++
                     }
+
                     answerView(question.correctOption, R.drawable.correct_option_border_bg)
 
                     if(mCurrentPosition == mQuestionsList!!.size){
                         btn_submit.text = "FINISH"
 
-                    }else{
-                        btn_submit.text = "GO TO NEXT QUESTION"
+                        }else{
+                            btn_submit.text = "GO TO NEXT QUESTION"
                     }
-                    mSelectedOptionPosition = 0
+                        mSelectedOptionPosition = 0
                 }
             }
         }
