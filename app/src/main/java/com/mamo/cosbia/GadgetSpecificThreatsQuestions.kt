@@ -10,7 +10,15 @@ import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+import kotlinx.android.synthetic.main.activity_gadget_specific_threats_questions.*
 import kotlinx.android.synthetic.main.activity_general_threats_questions.*
+import kotlinx.android.synthetic.main.activity_general_threats_questions.btn_submit
+import kotlinx.android.synthetic.main.activity_general_threats_questions.progressBar
+import kotlinx.android.synthetic.main.activity_general_threats_questions.tv_option_four
+import kotlinx.android.synthetic.main.activity_general_threats_questions.tv_option_one
+import kotlinx.android.synthetic.main.activity_general_threats_questions.tv_option_three
+import kotlinx.android.synthetic.main.activity_general_threats_questions.tv_option_two
+import kotlinx.android.synthetic.main.activity_general_threats_questions.tv_progress
 
 /*This is the General Internet threats questions which are linked to the main Activity class by the start button
 Clicking on the Start Button from the Main Activity calls this activity
@@ -25,18 +33,18 @@ class GadgetSpecificThreatsQuestions : AppCompatActivity(), View.OnClickListener
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_general_threats_questions)
+        setContentView(R.layout.activity_gadget_specific_threats_questions)
 
         mUserName = intent.getStringExtra(Constants.USER_NAME)
 
         mQuestionsList= Constants.getQuestions() // this gets a list of questions from the file Constants which is a data file
         setQuestion()
 
-        tv_option_one.setOnClickListener(this)
-        tv_option_two.setOnClickListener(this)
-        tv_option_three.setOnClickListener(this)
-        tv_option_four.setOnClickListener(this)
-        btn_submit.setOnClickListener(this)
+        tv_gadget_option_one.setOnClickListener(this)
+        tv_gadget_option_two.setOnClickListener(this)
+        tv_gadget_option_three.setOnClickListener(this)
+        tv_gadget_option_four.setOnClickListener(this)
+        btn_gadget_submit.setOnClickListener(this)
 
     }
     // setting the questions function
@@ -47,28 +55,28 @@ class GadgetSpecificThreatsQuestions : AppCompatActivity(), View.OnClickListener
         defaultOptionsView() // to make sure that all the buttons are at default stage before clicking on them
 
         if(mCurrentPosition == mQuestionsList!!.size){
-            btn_submit.text = "FINISH"
+            btn_gadget_submit.text = "FINISH"
         }else{
-            btn_submit.text = "SUBMIT"
+            btn_gadget_submit.text = "SUBMIT"
         }
 
-        progressBar.progress = mCurrentPosition
-        tv_progress.text = "$mCurrentPosition" + "/" + progressBar.max
+        gadget_progressBar.progress = mCurrentPosition
+        tv_gadget_progress.text = "$mCurrentPosition" + "/" + progressBar.max
 
-        tv_gen_threa_ques.text = question!!.question
+        tv_gadget_specific_threat_ques.text = question!!.question
         //iv_image.setImageResource(question.image)
-        tv_option_one.text = question.optionOne
-        tv_option_two.text = question.optionTwo
-        tv_option_three.text = question.optionThree
-        tv_option_four.text = question.optionFour
+        tv_gadget_option_one.text = question.optionOne
+        tv_gadget_option_two.text = question.optionTwo
+        tv_gadget_option_three.text = question.optionThree
+        tv_gadget_option_four.text = question.optionFour
 
     }
     private fun defaultOptionsView(){
         val options = ArrayList<TextView>()
-        options.add(0, tv_option_one)
-        options.add(1, tv_option_two)
-        options.add(2, tv_option_three)
-        options.add(3, tv_option_four)
+        options.add(0, tv_gadget_option_one)
+        options.add(1, tv_gadget_option_two)
+        options.add(2, tv_gadget_option_three)
+        options.add(3, tv_gadget_option_four)
 
       //  setting the default colour and text changes when the user selects the options
         for(option in options){
@@ -81,17 +89,17 @@ class GadgetSpecificThreatsQuestions : AppCompatActivity(), View.OnClickListener
 //performing the options selections
     override fun onClick(v: View?) {
         when(v?.id ){
-            R.id.tv_option_one ->{
-                selectedOptionView(tv_option_one, selectedOptionNum = 1)
+            R.id.tv_gadget_option_one ->{
+                selectedOptionView(tv_gadget_option_one, selectedOptionNum = 1)
             }
-            R.id.tv_option_two ->{
-                selectedOptionView(tv_option_two, selectedOptionNum = 2)
+            R.id.tv_gadget_option_two ->{
+                selectedOptionView(tv_gadget_option_two, selectedOptionNum = 2)
             }
-            R.id.tv_option_three ->{
-                selectedOptionView(tv_option_three, selectedOptionNum = 3)
+            R.id.tv_gadget_option_three ->{
+                selectedOptionView(tv_gadget_option_three, selectedOptionNum = 3)
             }
-            R.id.tv_option_four ->{
-                selectedOptionView(tv_option_four, selectedOptionNum = 4)
+            R.id.tv_gadget_option_four ->{
+                selectedOptionView(tv_gadget_option_four, selectedOptionNum = 4)
             }
             R.id.btn_submit ->{
                 if(mSelectedOptionPosition == 0){
@@ -137,16 +145,16 @@ class GadgetSpecificThreatsQuestions : AppCompatActivity(), View.OnClickListener
     private fun answerView(answer: Int, drawableView: Int){
         when(answer){
             1 -> {
-            tv_option_one.background = ContextCompat.getDrawable(this, drawableView)
+            tv_gadget_option_one.background = ContextCompat.getDrawable(this, drawableView)
         }
             2 -> {
-                tv_option_two.background = ContextCompat.getDrawable(this, drawableView)
+                tv_gadget_option_two.background = ContextCompat.getDrawable(this, drawableView)
             }
             3 -> {
-                tv_option_three.background = ContextCompat.getDrawable(this, drawableView)
+                tv_gadget_option_three.background = ContextCompat.getDrawable(this, drawableView)
             }
             4 -> {
-                tv_option_four.background = ContextCompat.getDrawable(this, drawableView)
+                tv_gadget_option_four.background = ContextCompat.getDrawable(this, drawableView)
             }
 
         }
@@ -159,6 +167,7 @@ class GadgetSpecificThreatsQuestions : AppCompatActivity(), View.OnClickListener
         tv.setTypeface(tv.typeface, Typeface.BOLD)
         tv.background = ContextCompat.getDrawable(this,
             R.drawable.selected_option_border_bg)
+
 
     }
 }

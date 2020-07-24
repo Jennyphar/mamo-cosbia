@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    tools:context=".GeneralThreatsQuestions">
+    tools:context=".GadgetSpecificThreatsQuestions">
 
 
     <LinearLayout
@@ -16,21 +16,21 @@
         android:padding="16dp">
 
         <TextView
-            android:id="@+id/tv_gen_threa_ques"
+            android:id="@+id/tv_gadget_specific_threat_ques"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:textColor="#363A43"
             android:textSize="22sp"
-            android:text="General Threats Questions"/>
+            android:text="Gadget Specific Questions"/>
         <ImageView
-            android:id="@+id/iv_image"
+            android:id="@+id/gadget_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:src="@drawable/ic_gen_inte_threats"/>
         <LinearLayout
-            android:id="@+id/ll_progress_details"
+            android:id="@+id/gadget_progress_details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -38,31 +38,31 @@
             android:orientation="horizontal">
 
             <ProgressBar
-                android:id="@+id/progressBar"
+                android:id="@+id/gadget_progressBar"
                 style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:max="8"
+                android:max="4"
                 android:minHeight="50dp"
                 android:indeterminate="false"
                 />
             <TextView
-                android:id="@+id/tv_progress"
+                android:id="@+id/tv_gadget_progress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:padding="15dp"
                 android:textColor="#7A8089"
                 android:textSize="14sp"
-                android:text="0/8"/>
+                android:text="0/4"/>
 
 
         </LinearLayout>
 
 
         <TextView
-            android:id="@+id/tv_option_one"
+            android:id="@+id/tv_gadget_option_one"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -74,7 +74,7 @@
             android:text="Apple"/>
 
         <TextView
-            android:id="@+id/tv_option_two"
+            android:id="@+id/tv_gadget_option_two"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -86,7 +86,7 @@
             android:text="Nokia"/>
 
         <TextView
-            android:id="@+id/tv_option_three"
+            android:id="@+id/tv_gadget_option_three"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -98,7 +98,7 @@
             android:text="Samgs"/>
 
         <TextView
-            android:id="@+id/tv_option_four"
+            android:id="@+id/tv_gadget_option_four"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -109,7 +109,7 @@
             android:textSize="14sp"
             android:text="Moto"/>
         <Button
-            android:id="@+id/btn_submit"
+            android:id="@+id/btn_gadget_submit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
