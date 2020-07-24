@@ -17,6 +17,18 @@
             android:name=".GeneralThreatsQuestions"
             android:screenOrientation="portrait"></activity>
         <activity
+            android:name=".OnlinePlatformThreatsQuestions"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".OnlineActivityThreatsQuestions"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".OnlineBehaviourSpecificThreatsQuestions"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".GadgetSpecificThreatsQuestions"
+            android:screenOrientation="portrait"></activity>
+        <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBarTheme"
