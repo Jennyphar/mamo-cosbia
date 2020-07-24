@@ -115,8 +115,101 @@ object Constants{
             "B: The Internet is an open forum for anyone and everyone. Bias is the rule rather than the exception." +
                     " Evaluate carefully ALL information on websites, personal or public"
         )
+        questionsList.add(ques8)
+
+
+        // Here we have Online Platform Questions. the structure of the questions is the same for all the question types.
+
         questionsList.add(ques7)
 
+        val ques9 = Question(
+            9,
+            "What is the best way to use Facebook, Chat, TikTok, WhatApp, Instagram,Hangouts, " +
+                    "Twitter and other social networking sites?",
+            "A. Limit the amount of information I share about myself.",
+            "B. Only talk to people I know.",
+            "C. Make my page private, except to the people I have as my friends.",
+            "D. All of the above",
+            4,
+            "D: Own Your Online Presence. When available, " +
+                    "set the privacy and security settings on websites to your comfort level for information sharing. " +
+                    "It is ok to limit how and with whom you share information."
+        )
+        questionsList.add(ques9)
+
+        val ques10 = Question(
+            10,
+            "What do you do when a stranger asks you to give them a picture of yourself on social networking sites?",
+            "A. Send no pictures, and tell an adult immediately",
+            "B. If you think you know them, send the picture",
+            "C. Send the picture, even if they’re a stranger",
+            "D. Ignore them",
+            1,
+            "A: You should never give pictures of yourself to a stranger because you do not know who they are or what they may be doing." +
+                    " When a stranger is asking for a picture, immediately deny and tell an adult.\n" +
+                    "You should never give anyone a photo that you would not want someone else to see." +
+                    " Even if you are comfortable with that person, it could still end up online or be shown to others"
+        )
+        questionsList.add(ques10)
+
+
+        val ques11 = Question(
+            11,
+            "From online, who should you accept friend request from?",
+            "A. Anyone",
+            "B. A friend of a friend",
+            "C. Someone you think you’ve met before",
+            "D. Only people you definitely know",
+            4,
+            "D: Only friend requests from people you definitely know," +
+                    " you should never accept friend request from strangers or anyone else you are uncertain."
+        )
+        questionsList.add(ques11)
+
+
+        val ques12 = Question(
+            12,
+            "Others cannot see anything I send in my private email, Instant messenger or Chat " +
+                    "(Tik Tok, Facebook, WhatsApp, Instagram, Hangouts, Twitter, Skype, Myspace, Snapchat, LinkedIn, and gaming).",
+            "A. TRUE",
+            "B. FALSE",
+            "C. MAYBE",
+            "D. I do not Know",
+            2,
+            "B: There are people and programs that can “see” into your private correspondence online. " +
+                    "NEVER send personal information unless you are positive it is a secure site"
+        )
+        questionsList.add(ques12)
+
+        val ques13 = Question(
+            13,
+            "Jessica’s friend Sophie asks for Jessica’s password to her Facebook account. What should Jessica do?",
+            "A. Give Sophie her password. Sophie is her friend and Jessica can trust her.",
+            "B. Tell Sophie her password and change it as soon as she gets home.",
+            "C. Don’t give her password to Sophie.",
+            "D. I do not Know",
+            3,
+            "C: Protect your personal information. Passwords are never to be shared with anyone other than a parent or guardian." +
+                    " It is a good idea for parents and guardians to keep passwords to make sure you remain safe and secure." +
+                    " Just because you spend time with friends, doesn’t mean you have to follow everything they do." +
+                    " If they are doing something that doesn’t seem right, you should feel"
+        )
+        questionsList.add(ques13)
+
+        val ques14 = Question(
+            14,
+            "If I want to know something about a stranger that sends me an Instant Message, " +
+                    "I can check their profile and trust that information.",
+            "A. TRUE",
+            "B. FALSE",
+            "C. MAYBE",
+            "D. I do not Know",
+            2,
+            "B: Part of the Internet’s wonder is its anonymity and sometimes the worst thing, too. " +
+                    "Unlike the physical world, you cannot verify a person’s age, location, etc." +
+                    " online so it is easier to lie and get away with it."
+        )
+        questionsList.add(ques14)
 
         return questionsList
 
