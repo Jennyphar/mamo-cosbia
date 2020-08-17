@@ -5,20 +5,13 @@ import android.graphics.Color
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_gadget_specific_threats_questions.*
-import kotlinx.android.synthetic.main.activity_general_threats_questions.*
 import kotlinx.android.synthetic.main.activity_general_threats_questions.btn_submit
 import kotlinx.android.synthetic.main.activity_general_threats_questions.progressBar
-import kotlinx.android.synthetic.main.activity_general_threats_questions.tv_option_four
-import kotlinx.android.synthetic.main.activity_general_threats_questions.tv_option_one
-import kotlinx.android.synthetic.main.activity_general_threats_questions.tv_option_three
-import kotlinx.android.synthetic.main.activity_general_threats_questions.tv_option_two
-import kotlinx.android.synthetic.main.activity_general_threats_questions.tv_progress
 
 /*This is the General Internet threats questions which are linked to the main Activity class by the start button
 Clicking on the Start Button from the Main Activity calls this activity
@@ -35,9 +28,9 @@ class GadgetSpecificThreatsQuestions : AppCompatActivity(), View.OnClickListener
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_gadget_specific_threats_questions)
 
-        mUserName = intent.getStringExtra(Constants.USER_NAME)
+        mUserName = intent.getStringExtra(ConstantsGadget.USER_NAME)
 
-        mQuestionsList= Constants.getQuestions() // this gets a list of questions from the file Constants which is a data file
+        mQuestionsList= ConstantsGadget.getQuestions() // this gets a list of questions from the file Constants which is a data file
         setQuestion()
 
         tv_gadget_option_one.setOnClickListener(this)
@@ -111,9 +104,9 @@ class GadgetSpecificThreatsQuestions : AppCompatActivity(), View.OnClickListener
                         }
                         else->{
                             val intent = Intent (this, ResultActivity::class.java)
-                            intent.putExtra(Constants.USER_NAME, mUserName)
-                            intent.putExtra(Constants.CORRECT_ANSWERS, mCorrectAnswer)
-                            intent.putExtra(Constants.TOTAL_QUESTIONS, mQuestionsList!!.size)
+                            intent.putExtra(ConstantsGadget.USER_NAME, mUserName)
+                            intent.putExtra(ConstantsGadget.CORRECT_ANSWERS, mCorrectAnswer)
+                            intent.putExtra(ConstantsGadget.TOTAL_QUESTIONS, mQuestionsList!!.size)
                             startActivity(intent)
                                 finish()
                         }

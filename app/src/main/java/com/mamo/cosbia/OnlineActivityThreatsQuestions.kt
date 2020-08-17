@@ -5,7 +5,6 @@ import android.graphics.Color
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
@@ -27,9 +26,9 @@ class OnlineActivityThreatsQuestions : AppCompatActivity(), View.OnClickListener
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_general_threats_questions)
 
-        mUserName = intent.getStringExtra(Constants.USER_NAME)
+        mUserName = intent.getStringExtra(ConstantsActivityThreats.USER_NAME)
 
-        mQuestionsList= Constants.getQuestions() // this gets a list of questions from the file Constants which is a data file
+        mQuestionsList= ConstantsActivityThreats.getQuestions() // this gets a list of questions from the file Constants which is a data file
         setQuestion()
 
         tv_option_one.setOnClickListener(this)
@@ -101,11 +100,11 @@ class OnlineActivityThreatsQuestions : AppCompatActivity(), View.OnClickListener
                         mCurrentPosition <= mQuestionsList!!.size ->{
                             setQuestion()
                         }
-                        else->{
+                        else->{ // Here we are reading the questions from the constantsActivityThreat file
                             val intent = Intent (this, ResultActivity::class.java)
-                            intent.putExtra(Constants.USER_NAME, mUserName)
-                            intent.putExtra(Constants.CORRECT_ANSWERS, mCorrectAnswer)
-                            intent.putExtra(Constants.TOTAL_QUESTIONS, mQuestionsList!!.size)
+                            intent.putExtra(ConstantsActivityThreats.USER_NAME, mUserName)
+                            intent.putExtra(ConstantsActivityThreats.CORRECT_ANSWERS, mCorrectAnswer)
+                            intent.putExtra(ConstantsActivityThreats.TOTAL_QUESTIONS, mQuestionsList!!.size)
                             startActivity(intent)
                                 finish()
                         }

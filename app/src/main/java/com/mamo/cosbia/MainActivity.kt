@@ -3,8 +3,6 @@ package com.mamo.cosbia
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.view.View.SYSTEM_UI_FLAG_FULLSCREEN
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -21,14 +19,8 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this,
                     "please enter your name",Toast.LENGTH_SHORT).show()
             }else{
-                if(intent == (Intent(this, GeneralThreatsQuestions::class.java))){
-                    intent.putExtra(Constants.USER_NAME,et_name.text.toString())
-                    startActivity(intent) //this starts an intent upon clicking  the start button, which takes us to the General Threats Questions.
-                    finish()
-
-                }else {
-                    // if the text box is not empty then we move to the activity
-                    intent.putExtra(Constants.USER_NAME, et_name.text.toString())
+                    val intent = Intent(this, GeneralThreatsQuestions::class.java)
+                    intent.putExtra(ConstantsGeneral.USER_NAME,et_name.text.toString())
                     startActivity(intent) //this starts an intent upon clicking  the start button, which takes us to the General Threats Questions.
                     finish()
                 }
@@ -36,4 +28,3 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-}

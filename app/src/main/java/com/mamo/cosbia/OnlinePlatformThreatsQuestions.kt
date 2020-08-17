@@ -5,7 +5,6 @@ import android.graphics.Color
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
@@ -27,9 +26,9 @@ class OnlinePlatformThreatsQuestions : AppCompatActivity(), View.OnClickListener
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_general_threats_questions)
 
-        mUserName = intent.getStringExtra(Constants.USER_NAME)
+        mUserName = intent.getStringExtra(ConstantsPlatform.USER_NAME)
 
-        mQuestionsList= Constants.getQuestions() // this gets a list of questions from the file Constants which is a data file
+        mQuestionsList= ConstantsPlatform.getQuestions() // this gets a list of questions from the file Constants which is a data file
         setQuestion()
 
         tv_option_one.setOnClickListener(this)
@@ -103,9 +102,9 @@ class OnlinePlatformThreatsQuestions : AppCompatActivity(), View.OnClickListener
                         }
                         else->{
                             val intent = Intent (this, ResultActivity::class.java)
-                            intent.putExtra(Constants.USER_NAME, mUserName)
-                            intent.putExtra(Constants.CORRECT_ANSWERS, mCorrectAnswer)
-                            intent.putExtra(Constants.TOTAL_QUESTIONS, mQuestionsList!!.size)
+                            intent.putExtra(ConstantsPlatform.USER_NAME, mUserName)
+                            intent.putExtra(ConstantsPlatform.CORRECT_ANSWERS, mCorrectAnswer)
+                            intent.putExtra(ConstantsPlatform.TOTAL_QUESTIONS, mQuestionsList!!.size)
                             startActivity(intent)
                                 finish()
                         }

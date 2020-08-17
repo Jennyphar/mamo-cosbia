@@ -15,6 +15,13 @@
         android:gravity="center"
         android:padding="16dp">
 
+
+        <ImageView
+            android:id="@+id/gadget_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_gen_inte_threats"/>
         <TextView
             android:id="@+id/tv_gadget_specific_threat_ques"
             android:layout_width="match_parent"
@@ -23,12 +30,6 @@
             android:textColor="#363A43"
             android:textSize="22sp"
             android:text="Gadget Specific Questions"/>
-        <ImageView
-            android:id="@+id/gadget_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:src="@drawable/ic_gen_inte_threats"/>
         <LinearLayout
             android:id="@+id/gadget_progress_details"
             android:layout_width="match_parent"

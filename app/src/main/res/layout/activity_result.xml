@@ -36,16 +36,6 @@
         android:textSize="25sp"
         android:textStyle="bold"
         android:textColor="@android:color/white"/>
-    <TextView
-        android:id="@+id/tv_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Username"
-        android:gravity="center_horizontal"
-        android:layout_marginTop="30dp"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/white"/>
 
     <TextView
         android:id="@+id/tv_score"
@@ -68,5 +58,16 @@
         android:textSize="18sp"
         android:textColor="@android:color/white"
         android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/btn_retake"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@color/colorPrimary"
+        android:text="RETAKE QUIZZ"
+        android:textSize="18sp"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
 
 </LinearLayout>
